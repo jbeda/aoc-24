@@ -53,7 +53,9 @@ report:
 		var bad int
 		for i := 1; i < len(report); i++ {
 			curr := report[i]
-			if (increasing && curr < last) || (!increasing && curr > last) || curr == last {
+			if (increasing && curr < last) ||
+				(!increasing && curr > last) ||
+				curr == last {
 				bad++
 			}
 
