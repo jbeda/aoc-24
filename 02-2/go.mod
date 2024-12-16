@@ -1,4 +1,4 @@
-module github.com/jbeda/aoc-2024/02-1
+module github.com/jbeda/aoc-2024/02-2
 
 go 1.23.3
 
