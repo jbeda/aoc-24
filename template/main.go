@@ -5,10 +5,12 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"time"
 )
 
 func main() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
+	timeStart := time.Now()
 
 	f, err := os.Open("input.txt")
 	if err != nil {
@@ -21,4 +23,6 @@ func main() {
 		line := scan.Text()
 		fmt.Println(line)
 	}
+
+	fmt.Println("Elapsed time:", time.Since(timeStart))
 }
