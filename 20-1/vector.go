@@ -62,24 +62,3 @@ func (v Vector) Neighbors4() []Vector {
 		v.Add(Vector{-1, 0}), // Left
 	}
 }
-
-// List all the neighbors within X steps
-func (v Vector) NeighborsX(dist int) []Vector {
-	neighbors := []Vector{}
-
-	for dy := -20; dy <= 20; dy++ {
-		stepsLeft := 20 - AbsInt(dy)
-		for dx := -stepsLeft; dx <= stepsLeft; dx++ {
-			if dx == 0 && dy == 0 {
-				continue
-			}
-			neighbors = append(neighbors, Vector{v.X + dx, v.Y + dy})
-		}
-	}
-
-	return neighbors
-}
-
-func (v1 Vector) ManhattanDist(v2 Vector) int {
-	return AbsInt(v1.X-v2.X) + AbsInt(v1.Y-v2.Y)
-}
