@@ -2,10 +2,8 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"log"
 	"os"
-	"runtime/debug"
 	"strconv"
 )
 
@@ -45,14 +43,6 @@ var Debug bool
 
 func DebugLogf(format string, v ...interface{}) {
 	if Debug {
-		s := fmt.Sprintf(format, v...)
-		log.Output(2, s)
-	}
-}
-
-func Assert(cond bool, msg string) {
-	if !cond {
-		debug.PrintStack()
-		log.Fatal(msg)
+		log.Printf(format, v...)
 	}
 }
